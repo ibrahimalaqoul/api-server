@@ -23,13 +23,13 @@ async function addfood(req,res) {
 }
 async function getFoodById(req,res){
     let addedId = parseInt(req.params.id);
-    let foodAskedFor = await foodCollection.readRecord(id);
+    let foodAskedFor = await foodCollection.readRecord(addedId);
     res.status(200).json(foodAskedFor);
 }
 
 async function deleteFood(req,res){
     let deletedId = parseInt(req.params.id);
-    let deletedfood = await foodCollection.removeRecord(id);
+    let deletedfood = await foodCollection.removeRecord(deletedId);
     res.status(204).json(deletedfood);
 }
 
